@@ -1,13 +1,34 @@
 Yakoub Beldjehem
 
-#1  grep '^Z' cities.txt
+
+## Select any word that start with Z
+#1  grep '^Z' cities.txt  
+
+## Select words that end with gan using $
 #2  grep 'gan$' cities.txt
+
+## Select words that start ^ with these letter inside [] 
 #3  grep '^[ADE]' cities.txt
+
+## Select words that start ^ with any character, the 2nd and 3rd 'ar'
 #4  grep  '^.ar' cities.txt 
+
+## Select all the words that doesnt start with letter C
 #5 grep -v '^C' cities.txt
+
+## prints words that dont have space in them and min 14 charcter 
+#6 egrep  '[^[:space:]]{14,}' cities.txt
+
+## Count all the words that start ^ with letter B
 #7  grep -c '^B' cities.txt
-#8  grep 'd' -o cities.txt | wc -l 
-#9  grep -E '(.)\1+$' cities.txt or without egrep  grep '\([a-z]\)\1$' cities.txt 
+
+## before the pipe select words only matching, use the output as an input after the pipe and count lines
+#8  grep 'd' -o cities.txt | wc -l
+
+##  the () to remember the character a-z. Then we can use \1 to repeat the character. 
+#9  grep '\([a-z]\)\1$' cities.txt 
+
+## select the first and second letter and do the same at the end of the word
 #10 grep -i  '\([a-z]\)\([a-z]\)[a-z]\2\1' cities.txt 
 
 
